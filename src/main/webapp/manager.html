@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link href="./employee.css" rel="stylesheet"/>
+        <link href="./manager.css" rel="stylesheet"/>
     <title>Manager Page</title>
     </head>
     <body>
@@ -16,7 +16,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="./employee.html">Home</a>
+                <a class="nav-item nav-link active" href="./manager.html">Home</a>
+                <a class="nav-item nav-link" onclick="document.getElementById('approve').style.display='block'" style="width:auto;">Approve</a>
+                <a class="nav-item nav-link" onclick="document.getElementById('reject').style.display='block'" style="width:auto;">Reject</a>
                 <a class="nav-item nav-link" href="./login.html">Logout</a>
               </div>
             </div>
@@ -29,12 +31,35 @@
                 <th scope="col">Reimbursement Amount</th>
                 <th scope="col">Reimbursement Description</th>
                 <th scope="col">Reimbursement Status</th>
-                <th scope="col">Approve</th>
-                <th scope="col">Reject</th>
               </tr>
             </thead>
           </table>
 
+          <div class="modal" id="approve">
+            <form class="modal-content animate">
+               <h2 id="h-id">Approve Reimbursement</h2>
+               <span onclick="document.getElementById('approve').style.display='none'" class="close" title="Close Modal">&times;</span>
+               <div class="form-group">
+                  <label id="id-label">Reimbursement ID</label>
+                  <input id="id-input" type="text" class="form-control" placeholder="Reimbursement ID">
+               </div>
+
+               <button id="approve-button" type="submit" class="btn btn-black">Submit</button>
+            </form>
+          </div>
+
+          <div class="modal" id="reject">
+            <form class="modal-content animate">
+               <h2 id="h-id">Reject Reimbursement</h2>
+               <span onclick="document.getElementById('reject').style.display='none'" class="close" title="Close Modal">&times;</span>
+               <div class="form-group">
+                  <label id="id-label">Reimbursement ID</label>
+                  <input id="id-input" type="text" class="form-control" placeholder="Reimbursement ID">
+               </div>
+
+               <button id="reject-button" type="submit" class="btn btn-black">Submit</button>
+            </form>
+          </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
         <script src="./manager.js"></script>
     </body>

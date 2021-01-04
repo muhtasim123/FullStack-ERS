@@ -1,4 +1,4 @@
-async function loginSubmit(e){
+async function reimbSubmit(e){
     e.preventDefault();
 
     let reimb_amount = document.getElementById("amount-input").value;
@@ -33,4 +33,4 @@ async function loginSubmit(e){
 }
 
 
-document.getElementsByTagName("form")[0].addEventListener('submit', loginSubmit)
+document.getElementsByTagName("form")[0].addEventListener('submit', reimbSubmit)

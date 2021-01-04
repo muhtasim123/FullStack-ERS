@@ -21,7 +21,7 @@ public class ManagerDAO {
 		
 		Connection conn = cf.getConnection();
 		
-		String sql = "select * from \"ers_reimbursement\"";
+		String sql = "select * from \"ers_reimbursement\" where \"reimb_status_id\" = 3";
 
 		try {
 			PreparedStatement selectAll = conn.prepareStatement(sql);
